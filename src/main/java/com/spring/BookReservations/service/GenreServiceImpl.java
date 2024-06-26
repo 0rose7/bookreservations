@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class GenreServiceImpl implements GenreService {
@@ -21,4 +22,19 @@ public class GenreServiceImpl implements GenreService {
     public List<String> findAllGenreNames() {
         return genreRepository.findAllGenreNames();
     }
+    @Override
+    public List<Genre> findAll(){
+        return genreRepository.findAll();
+    }
+
+    @Override
+    public void deleteById(int id) {
+        genreRepository.deleteById(id);
+    }
+
+    @Override
+    public Optional<Genre> findById(int id) {
+        return genreRepository.findById(id);
+    }
+
 }
